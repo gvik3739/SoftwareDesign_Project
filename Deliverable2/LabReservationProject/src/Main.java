@@ -3,6 +3,7 @@ import model.LabManager;
 import model.User;
 import service.RegistrationService;
 import util.SystemClock;
+import model.Equipment;
 
 public class Main {
     public static void main(String[] args) {
@@ -38,5 +39,35 @@ public class Main {
 
         System.out.println("Created manager type: " + manager.getUserType());
         System.out.println("Manager ID: " + manager.getManagerId());
+
+        Equipment microscope = manager.addEquipment(
+                "EQ001",
+                "Digital Microscope",
+                "Lab A"
+        );
+
+        System.out.println("Equipment ID: " + microscope.getEquipmentId());
+        System.out.println("Description: " + microscope.getDescription());
+        System.out.println("Location: " + microscope.getLabLocation());
+        System.out.println("Initial state: " + microscope.getCurrentStateName());
+        System.out.println("Available? " + microscope.isAvailable());
+
+        manager.disableEquipment(microscope);
+        System.out.println("After disable: " + microscope.getCurrentStateName());
+        System.out.println("Available? " + microscope.isAvailable());
+
+        manager.enableEquipment(microscope);
+        System.out.println("After enable: " + microscope.getCurrentStateName());
+        System.out.println("Available? " + microscope.isAvailable());
+
+        manager.markEquipmentUnderMaintenance(microscope);
+        System.out.println("After maintenance: " + microscope.getCurrentStateName());
+        System.out.println("Available? " + microscope.isAvailable());
+
+        manager.enableEquipment(microscope);
+        System.out.println("After maintenance finished: " + microscope.getCurrentStateName());
+        System.out.println("Available? " + microscope.isAvailable());
+
+
     }
 }

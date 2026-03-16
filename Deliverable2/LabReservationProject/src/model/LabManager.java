@@ -22,4 +22,20 @@ public class LabManager extends User {
     public double getHourlyRate() {
         return 0.0;
     }
+
+    public Equipment addEquipment(String equipmentId, String description, String labLocation) {
+        return new Equipment(equipmentId, description, labLocation);
+    }
+
+    public void enableEquipment(Equipment equipment) {
+        equipment.enable();
+    }
+
+    public void disableEquipment(Equipment equipment) {
+        equipment.disable();
+    }
+
+    public void markEquipmentUnderMaintenance(Equipment equipment) {
+        equipment.markUnderMaintenance();
+    }
 }

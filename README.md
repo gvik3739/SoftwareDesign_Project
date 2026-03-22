@@ -1,24 +1,36 @@
 # Lab Reservation System
-EECS 3311 – Software Design | Latest Update: Deliverable 2
+EECS 3311 – Software Design | Deliverable 2
+
+---
+
+## ⚠️ Important — Read Before Running
+
+- Open the project at the **`LabReservationProject`** folder level, NOT at `SoftwareDesign_Project` or `Deliverable2`
+- When entering login credentials, **type them manually** — do not copy/paste as extra spaces will cause login to fail
+- Make sure you have **Java 17 or higher** installed
 
 ---
 
 ## How to Run
 
 1. Clone or download the repository
-2. Open the project in VS Code or IntelliJ
-3. Navigate to:
+2. Open your IDE (VS Code, IntelliJ, etc.)
+3. **Open the folder at this level:**
 ```
-Deliverable2/LabReservationProject/src/Main.java
+SoftwareDesign_Project/Deliverable2/LabReservationProject
 ```
-4. Right-click `Main.java` and click **Run Java** (VS Code) or **Run 'Main'** (IntelliJ)
-5. The login window will open
-
-> Make sure you have **Java 17 or higher** installed before running.
+4. Navigate to:
+```
+src/Main.java
+```
+5. Right-click `Main.java` → click **Run Java** (VS Code) or **Run 'Main'** (IntelliJ)
+6. The login window will open
 
 ---
 
 ## Login Credentials
+
+> ⚠️ **Type these manually — do not copy/paste**
 
 | Name | Email | Password | Role |
 |---|---|---|---|
@@ -28,75 +40,29 @@ Deliverable2/LabReservationProject/src/Main.java
 | Emily Brown | ebrown@yorku.ca | Guest@123 | Guest |
 | Arjun Patel | apatel@yorku.ca | Manager@123 | Lab Manager |
 
+> Lab Manager login unlocks the **Admin** tab for managing equipment and viewing all reservations.
+
 ---
 
 ## Project Structure
 
 ```
-SoftwareDesign_Project/
-└── Deliverable2/
-    └── LabReservationProject/
-        ├── data/                   ← CSV files (users, equipment, reservations, payments)
-        └── src/
-            ├── Main.java           ← Entry point, run this
-            ├── command/            ← Command pattern
-            │   ├── ReservationCommand.java
-            │   ├── CommandManager.java
-            │   ├── MakeReservationCommand.java
-            │   ├── CancelReservationCommand.java
-            │   ├── ModifyReservationCommand.java
-            │   └── ExtendReservationCommand.java
-            ├── data/               ← CSV persistence
-            │   ├── MaintainUser.java
-            │   ├── MaintainEquipment.java
-            │   ├── MaintainReservation.java
-            │   ├── MaintainPayment.java
-            │   └── StubUser.java
-            ├── factory/            ← Factory pattern
-            │   └── UserFactory.java
-            ├── gui/                ← Swing GUI
-            │   ├── LoginUI.java
-            │   ├── MainDashboardUI.java
-            │   ├── ReservationListPanel.java
-            │   ├── MakeReservationPanel.java
-            │   ├── EquipmentPanel.java
-            │   └── AdminPanel.java
-            ├── model/              ← Domain objects
-            │   ├── User.java
-            │   ├── Student.java
-            │   ├── Faculty.java
-            │   ├── Researcher.java
-            │   ├── Guest.java
-            │   ├── LabManager.java
-            │   ├── Equipment.java
-            │   ├── EquipmentState.java
-            │   ├── AvailableState.java
-            │   ├── DisabledState.java
-            │   ├── MaintenanceState.java
-            │   ├── Reservation.java
-            │   ├── Payment.java
-            │   └── UsageRecord.java
-            ├── service/            ← Service layer
-            │   ├── ReservationService.java
-            │   ├── BillingService.java
-            │   ├── RegistrationService.java
-            │   ├── LateArrivalObserver.java
-            │   └── SensorUpdateObserver.java
-            ├── strategy/           ← Strategy pattern
-            │   ├── PricingStrategy.java
-            │   ├── PaymentStrategy.java
-            │   ├── StudentPricingStrategy.java
-            │   ├── FacultyPricingStrategy.java
-            │   ├── ResearcherPricingStrategy.java
-            │   ├── GuestPricingStrategy.java
-            │   ├── CreditCardPaymentStrategy.java
-            │   ├── DebitPaymentStrategy.java
-            │   ├── InstitutionalAccountPaymentStrategy.java
-            │   └── ResearchGrantPaymentStrategy.java
-            └── util/               ← Observer interfaces + Singleton clock
-                ├── Observer.java
-                ├── Subject.java
-                └── SystemClock.java
+LabReservationProject/          ← Open your IDE at this level
+├── data/                       ← CSV files (do not delete)
+│   ├── users.csv
+│   ├── equipment.csv
+│   ├── reservations.csv
+│   └── payments.csv
+└── src/
+    ├── Main.java               ← Run this
+    ├── command/                ← Command pattern
+    ├── data/                   ← CSV persistence layer
+    ├── factory/                ← Factory pattern
+    ├── gui/                    ← Swing GUI
+    ├── model/                  ← Domain objects
+    ├── service/                ← Service layer
+    ├── strategy/               ← Strategy pattern
+    └── util/                   ← Observer interfaces + SystemClock
 ```
 
 ---

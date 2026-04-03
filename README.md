@@ -86,7 +86,7 @@ LabReservationProject/          ← Open your IDE at this level
 
 ### ⚠️ Important — Read Before Running
 
-- Open the project at the **`New_LabReservationProject`** folder level
+- Open the project at the **`LabReservationProject`** folder level
 - Make sure you have **Java 21** and **Maven 3.6+** installed
 
 ---

@@ -95,7 +95,7 @@ LabReservationProject/          ← Open your IDE at this level
 
 1. Open your IDE at:
 ```
-SoftwareDesign_Project/Deliverable3/New_LabReservationProject
+SoftwareDesign_Project/Deliverable3/LabReservationProject
 ```
 2. Run the application:
 ```bash
@@ -107,7 +107,7 @@ mvn exec:java -Dexec.mainClass="Main"
 
 ### Running Tests
 
-All commands should be run from `Deliverable3/New_LabReservationProject/`.
+All commands should be run from `Deliverable3/LabReservationProject/`.
 
 **Run all tests (with JaCoCo coverage report):**
 ```bash
